@@ -68,7 +68,7 @@ export async function loadEnv(
 /**
  * 转换环境变量配置
  */
-export async function loadAndConvertEnv(
+export async function LoadAndConvertEnv(
   match = 'VITE_',
   confFiles = getConfFiles(),
 ): Promise<BuildOptions> {

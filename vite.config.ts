@@ -2,11 +2,13 @@
 
 import path from 'node:path'
 import { defineConfig } from 'vite'
-import { createVitePlugins } from './internal/plugins'
-import { loadAndConvertEnv } from './internal/utils/env'
+import { LoadAndConvertEnv } from './internal/utils/env'
+import { ConfigVitePlugins } from './internal/vite/plugins'
+import proxy from './internal/vite/proxy'
 
-export default defineConfig(async ({ mode }) => {
-  const buildOptions = await loadAndConvertEnv()
+export default defineConfig(async ({ command }: ConfigEnv): UserConfig => {
+  const isBuild = command === 'build'
+  const buildOptions = await LoadAndConvertEnv()
 
   return {
     resolve: {
@@ -14,9 +16,9 @@ export default defineConfig(async ({ mode }) => {
         '@/': `${path.resolve(__dirname, 'src')}/`,
       },
     },
-    plugins: createVitePlugins({
+    plugins: ConfigVitePlugins({
       build: {
-        isBuild: mode !== 'development',
+        isBuild,
         ...buildOptions,
       },
     }),
@@ -24,6 +26,12 @@ export default defineConfig(async ({ mode }) => {
     // https://github.com/vitest-dev/vitest
     test: {
       environment: 'jsdom',
+    },
+    server: {
+      hmr: { overlay: false },
+      host: '0.0.0.0',
+      open: true,
+      proxy,
     },
   }
 })

@@ -44,24 +44,12 @@
 ### 插件
 
 - [Vue Router](https://github.com/vuejs/vue-router)
-  - [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) - 以文件系统为基础的路由
+- [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) - 以文件系统为基础的路由
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 等，无需导入
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - 自动加载组件
 - [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - 探索并扩展更多的宏和语法糖到 Vue 中
 - [VueUse](https://github.com/antfu/vueuse) - 实用的 Composition API 工具合集
-
-## 现在可以试试!
-
-### GitHub 模板
-
-[使用这个模板创建仓库](https://github.com/antfu-collective/vitesse-lite/generate).
-
-### 克隆到本地
-
-如果您更喜欢使用更干净的 git 历史记录手动执行此操作
-
-```bash
-npx degit antfu-collective/vitesse-lite my-vitesse-app
-cd my-vitesse-app
-pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
-```
+- [vite-plugin-restart](https://github.com/antfu/vite-plugin-restart) - 监听配置文件修改自动重启Vite
+- [vite-plugin-imagemin](https://github.com/csbun/vite-plugin-imagemin) - 压缩图片
+- [vite-plugin-compression](https://github.com/vitejs/vite-plugin-compression) - 压缩文件
+- [vite-plugin-visualizer](https://github.com/btd/vite-plugin-visualizer) - 可视化打包分析

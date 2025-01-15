@@ -1,5 +1,5 @@
 import type { PluginOption } from 'vite'
-import type { CompressOptions } from '../typing'
+import type { CompressOptions } from '../../typing'
 import compression from 'vite-plugin-compression'
 
 /**

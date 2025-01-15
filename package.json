@@ -1,7 +1,7 @@
 {
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@9.15.1",
+  "packageManager": "pnpm@9.1.4",
   "scripts": {
     "build": "vite build --mode production",
     "build:release": "vite build --mode release",
@@ -45,6 +45,8 @@
     "unplugin-vue-router": "^0.10.9",
     "vite": "^6.0.5",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-restart": "^0.4.2",
     "vitest": "^2.1.8",
     "vue-tsc": "^2.2.0"
   },
