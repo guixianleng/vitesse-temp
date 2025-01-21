@@ -1,6 +1,19 @@
+<script setup lang="ts">
+import en from 'element-plus/dist/locale/en.mjs'
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
+
+const language = ref('zh-cn')
+const locale = computed(() => (language.value === 'zh-cn' ? zhCn : en))
+</script>
+
 <template>
-  <main font-sans p="x-4 y-10" text="center gray-700 dark:gray-200">
-    <RouterView />
-    <TheFooter />
-  </main>
+  <el-config-provider :locale="locale">
+    <router-view />
+  </el-config-provider>
 </template>
+
+<style>
+p {
+  padding: 0 10px;
+}
+</style>

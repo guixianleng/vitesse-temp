@@ -14,7 +14,7 @@ export function createAutoImportPlugin() {
     ],
     dts: 'types/auto-imports.d.ts',
     dirs: [
-      './src/composables',
+      'src/composables/**',
     ],
     vueTemplate: true,
     resolvers: [

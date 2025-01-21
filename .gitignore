@@ -21,3 +21,5 @@ typed-router.d.ts
 
 # Editor directories and files
 .vscode/*
+.yalc
+yalc.lock

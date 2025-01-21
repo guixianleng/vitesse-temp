@@ -1,7 +1,14 @@
+import { constantRoutes } from 'advint-user-admin'
 import { createRouter, createWebHistory } from 'vue-router'
-import { routes } from 'vue-router/auto-routes'
+import { routes as fileRoutes } from 'vue-router/auto-routes'
+
+fileRoutes.flat(Infinity).forEach((route) => {
+  route.path = safeResolve(route.path)
+})
 
 export const router = createRouter({
-  routes,
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(),
+  routes: [...fileRoutes, ...constantRoutes],
 })
+
+export default router

@@ -22,6 +22,11 @@ export default defineConfig(async ({ command }: ConfigEnv): UserConfig => {
         ...buildOptions,
       },
     }),
+    css: {
+      preprocessorOptions: {
+        scss: { api: 'modern-compiler' },
+      },
+    },
 
     // https://github.com/vitest-dev/vitest
     test: {
