@@ -4,6 +4,7 @@ import type { CompressOptions, ViteOptions } from '../../typing'
 import { createAutoImportPlugin } from './auto-import'
 import { createComponentsPlugin } from './components'
 import { createCompressionPlugin } from './compression'
+import createIconifyIconPlugin from './iconify-icon'
 import { createImageminPlugin } from './imagemin'
 import { createMacrosPlugin } from './macros'
 import { createRestartPlugin } from './restart'
@@ -32,6 +33,8 @@ export function ConfigVitePlugins(options: ViteOptions = {}): PluginOption[] {
     createUnocssPlugin(),
     // 监听配置文件改动重启
     createRestartPlugin(),
+    // iconify-icon
+    createIconifyIconPlugin(),
   ]
 
   // 生产环境插件

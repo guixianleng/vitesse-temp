@@ -1,3 +1,5 @@
+// icon按需引入
+import IconsResolver from 'unplugin-icons/resolver'
 import {
   ElementPlusResolver,
   VueUseComponentsResolver,
@@ -16,6 +18,9 @@ export function createComponentsPlugin() {
     resolvers: [
       ElementPlusResolver(),
       VueUseComponentsResolver(),
+      IconsResolver({
+        enabledCollections: ['ep', 'mdi'],
+      }),
     ],
   })
 }

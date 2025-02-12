@@ -1,9 +1,12 @@
 <script setup lang="ts" generic="T extends any, O extends any">
+import { AdvIconPicker } from 'advint-ui'
+
 defineOptions({
   name: 'IndexPage',
 })
 
 const name = ref('')
+const selectedIcon = ref('')
 
 const router = useRouter()
 function go() {
@@ -42,5 +45,19 @@ function go() {
         Go
       </button>
     </div>
+
+    <AdvIconPicker
+      v-model="selectedIcon"
+      :iconify-icons="[
+        {
+          collection: 'mdi',
+          icons: ['account', 'home', 'settings'],
+        },
+        {
+          collection: 'ep',
+          icons: ['edit', 'delete', 'search'],
+        },
+      ]"
+    />
   </div>
 </template>

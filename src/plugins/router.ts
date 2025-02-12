@@ -8,7 +8,10 @@ fileRoutes.flat(Infinity).forEach((route) => {
 
 export const router = createRouter({
   history: createWebHistory(),
-  routes: [...fileRoutes, ...constantRoutes],
+  routes: [
+    ...fileRoutes,
+    ...constantRoutes,
+  ],
 })
 
 export default router

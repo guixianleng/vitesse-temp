@@ -38,5 +38,8 @@ export default defineConfig(async ({ command }: ConfigEnv): UserConfig => {
       open: true,
       proxy,
     },
+    optimizeDeps: {
+      include: ['vue', 'vue-router', 'pinia', 'axios', 'element-plus', '@vueuse/core', 'advint-user-admin'],
+    },
   }
 })
